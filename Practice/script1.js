@@ -197,3 +197,26 @@ function sample2(a, b, ...c) { //나머지 매개변수. 이름그대로 원래 
 sample2(1, 2); // => 1 2
 sample2(1, 2, 3); // => 1 2 [3]
 sample2(1, 2, 3, 4); // => 1 2 [3, 4]
+function sample3(...items) {
+    console.log(items);
+} //전개연산자로인해 매개변수로 변수를 각각 입력해도 다 배열로 변환해서 값을 넣어줌. 178내용이 이거 이용하면됨
+array = [1, 2, 3, 4];
+sample3(array); // => Array(4) 요소가 4개있는 배열이란뜻
+sample3(...array); // => [1, 2, 3, 4]
+function earnings (name, wage=8590, hours=40) { //기본 매개변수. 아무것도 입력안하면 자동으로 시급에8590, 시간에40을 할당함. 주의할점: function smaple(a=3, b) 이순서로 해버리면 앞에서부터 순차적으로 입력해줘야하는데 자동으로 a들어다고 다음에 b가 들어갈거라 기본값이 의미가 없다.
+    console.log(`# ${name}님의 급여정보`);
+    console.log(`- 시급: ${wage}원`);
+    console.log(`- 근무 시간: ${hours}원`);
+    console.log(`- 급여: ${wage*hours}원`);
+    console.log("");
+} //시급과 시간을 입력받아 급여를 계산하는 함수.
+earnings("구름"); // => 이름 구름의 기초시급과 기본근문시간40으로 계산값이 나옴
+earnings("별", 10000); //시급만원에 근무시간은 기본인 40
+earnings("하늘", 12000, 80); //시급1만2천원에 근무시간 80
+function isLeapYear2(year=new Date().getFullYear()) {
+    return (year % 4 ===0) && (year % 100 !== 0) || (year % 400 === 0)
+} //윤년찾아주는함수에 기본값을 현재 년도로하는거 추가
+// TMI 구버전 자바스크립트에서는 가변매개함수로 arguments를 사용함
+// TMI 구버전 자바스크립트에서는 전개연산자로 apply()함수를 이용함
+// 자바스크립트는 함수를 하나의 자료로 보기에 만드는위치가 지정되있지않음
+// 그래서 자바스크립트는 매개변수자리에다가 함수를 집어넣을수 있음
