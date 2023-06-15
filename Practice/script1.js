@@ -219,4 +219,31 @@ function isLeapYear2(year=new Date().getFullYear()) {
 // TMI 구버전 자바스크립트에서는 가변매개함수로 arguments를 사용함
 // TMI 구버전 자바스크립트에서는 전개연산자로 apply()함수를 이용함
 // 자바스크립트는 함수를 하나의 자료로 보기에 만드는위치가 지정되있지않음
-// 그래서 자바스크립트는 매개변수자리에다가 함수를 집어넣을수 있음
+// 그래서 자바스크립트는 매개변수자리에다가 함수를 집어넣을수 있음. 콜백함수라함
+//콜백함수;선언적 함수
+function callThreeTimes(callback) {
+    for (let i=0; i<3; i++) { //3번반복
+        callback(i); //231번째줄에서 매개변수로 print를 넣었으니 print(i);로 작동할거임
+    }
+}
+function print(i) { //출력용 함수
+    console.log(`${i}번째 함수 호출`);
+}
+callThreeTimes(print);
+//콜백함수;익명함수
+callThreeTimes(function(i) { //여기 괄호 하나만. 왜 이렇게 치지...?
+    console.log(`${i}번쨰 함수 호출`);
+}) //여기서침. 함수의 매게변수위치에서 함수를 선언하는건가?
+const numbers = [273, 52, 103, 32, 57];
+numbers.forEach(function(value, index, array) {
+    console.log(`${index}번쨰 요소 : ${value}`);
+}) //forEach()메소드. 이해못함
+let numbers = [273, 52, 103, 32, 57];
+numbers = numbers.map(function(value, index, array) {
+    return value*value;
+}) //map() 메소드
+const evenNumbers = numbers.filter(function (value) {
+    return value % 2 === 0;
+})
+ //filter()메소드
+array.map((value) => value*value) //화살표 함수
