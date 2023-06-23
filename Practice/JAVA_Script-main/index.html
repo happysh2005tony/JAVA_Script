@@ -3,10 +3,46 @@
 <head>
     <script async src="script1.js"></script><!-- 이거 선언하는방법 몇개있었는데 기얶안남 -->
     <script src="./raw.githubusercontent.com_lodash_lodash_4.17.15-npm_lodash.js"></script><!-- 외부 라이브러리 긇어오기(유틸리티 라이브러리) -->
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script><!-- URL이용해서 하는법 -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script><!-- URL이용해서 하는법. 이런걸 CDN이라하는데 CDN은 용량을 줄여야해서 파일을 집핑함. 그래서 이게 용량이 더 작음 -->
+    <!-- 다르 라이브러리는 popular javascript library 2020참고 -->
+    <script>
+        //위 Lodash 라이브러리의 _.sortBy메소드를 이용해 가격순으로 정렬하는 프로그램
+        const book = [{
+            title: "혼자 공부하는 파이썬",
+            price: 18000,
+            publisher: "한빛미디어"
+        }, {
+            title: "HTML5 왭 프로그래밍 입문",
+            price: 26000,
+            publisher: "한빛아카데미"
+        }, {
+            name: "HTML5 웹 프로그래밍 입문",
+            price: 30000,
+            publisher: "한빛 아카데미"
+        }, {
+            name: "딥러닝을 위한 수학",
+            price: 25000,
+            publisher: "위키북스"
+        }]
+        const output = _.sortBy(books, (book) => book.price)
+        console.log(JSON.stringify(output, null, 2))
+    </script>
     <title>Document</title>
+    <script>
+        const h1 = (text) => `<h1>${text}</h1>`
+    </script>
+    <script>
+        document.body.innerHTML += h1("1번째 script 태그")
+    </script>
 </head>
 <body>
-    
+    <script>
+        document.body.innerHTML +=h1("2번째 script 태그")
+    </script>
+    <h1>1번쨰 h1 태그</h1>
+    <script>
+        document.body.innerHTML += h1("3번쨰 scr")
+    </script>
+    <h1>2번째 h2 태그</h1>
 </body>
 </html>
