@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keyword" content="song, Jonas Blue, MAMA, tropical, summer">
+    <title>Jonas Blue - MAMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: aqua;
+        }
+        nav {
+            z-index: 2;
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            background-color: rgb(103, 103, 103);
+        }
+        ul {
+            position: absolute;
+            right: 0;
+            display: inline-flex;
+            justify-content: flex-end;
+            color: white;
+        }
+        li {
+            list-style: none;
+            padding: 10px 30px;
+            margin: 2px;
+        }
+    /* id */
+        #logo {
+            display: inline-flex;
+            margin-left: 10%;
+        }
+        #explanation {
+            z-index: 2;
+            margin: auto;
+            width: 800px;
+            height: 100px;
+            position: relative;
+            bottom: 50px;
+            background-color: rgb(103, 103, 103);
+        }
+        #explanation:hover {
+            width: 850px;
+        }
+        #background {
+            /* position: relative; */
+            z-index: 1;
+        }
+        #mainPage {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+        })
+    </script>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            <img src="./img/logo.jpg" alt="logo" width="150px">
+        </div>
+        <ul>
+            <li><a>Play</a></li>
+            <li><a>Explanation</a></li>
+            <li><a>Story</a></li>
+            <li><a>View point</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="background">
+            <img src="./img/background.webp" alt="background" width="100%">
+        </div>
+        <div id="explanation">
+            check Hello world!
+        </div>
+        <div id="mainPage">
+            hello
+        </div>
+    </main>
+</body>
+</html>

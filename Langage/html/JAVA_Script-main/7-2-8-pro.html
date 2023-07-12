@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위변환기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let nowValue
+            let changeValue = 10
+
+            const firstSelect = document.querySelector("#first")
+            const secondSelect = document.querySelector("#secont")
+            const input = document.querySelector("input")
+            const span = document.querySelector("span")
+            const button = document.querySelector("button")
+            const p = document.querySelector("p")
+            const options = event.currentTarget.options
+
+            const calculate = () => {
+                var endValue = (현재값 * 변환상수).toFixed(2)
+            }
+
+            firstSelect.addEventListener("change", (event) => {
+                var firstIndex = event.currentTarget.options.selectedIndex
+                변환상수 = Number(options[firstIndex].value)
+                calculate()
+            })
+            secondSelect.addEventListener("change", (event) => {
+                var secondIndex = event.currentTarget.options.selectedIndex
+                변환상수 = Number(options[secondIndex].value)
+                calculate()
+            })
+
+            input.addEventListener("keyup", (event) => { //입력값
+                현재값 = Number(event.currentTarget.value)
+                calculate()
+            })
+            
+            function calculateValue() {
+                /* span.textContent = `${options[firstIndex].label}to ${options[secondIndex].label}` */
+                document.getElementsByTagName("span").innerHTML = "hello"
+            }
+            span.textContent = `${options[firstIndex].label}to ${options[secondIndex].label}`
+        })
+    </script>
+    <style>
+        body {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text"><br>
+        <select id="first">
+            <option value="10" label="mm">mm</option>
+            <option value="0.01" label="m">m</option>
+            <option value="0.393701" label="inch">inch</option>
+        </select>
+    </div>
+    <span></span>
+    <div>
+        <input type="text"><br>
+        <select id="second">
+            <option value="10" label="mm">mm</option>
+            <option value="0.01" label="m">m</option>
+            <option value="0.393701" label="inch">inch</option>
+        </select>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- inch to cm -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.querySelector("input")
+            const button = document.querySelector("button")
+            const p = document.querySelector("p")
+
+            button.addEventListener("click", () => {
+                const inch = Number(input.value) //입력된값을 숫자로 바꾸기
+                if(isNaN(inch)) { //이상한거 적어놓았을시
+                    p.textContnt = "숫자를 입력해주세요"
+                    return
+                }
+                //return빼고 else를 쓸수도 있지만 reture쓰는게 훨신 깔끔함. 조기리턴이라함
+                // else {
+                //     const cm = inch*2.54
+                //     p.textContent = `${cm} cm`
+                // }
+
+                const cm = inch*2.54
+                p.textContent = `${cm} cm`
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text"> inch<br>
+    <button>계산</button>
+    <p></p>
+</body>
+</html>

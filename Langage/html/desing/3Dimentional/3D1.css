@@ -1,0 +1,57 @@
+.Box {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.singleBox {
+    width: 400px;
+    animation: rotate 15s linear infinite;
+    transform-style: preserve-3d;
+    /* perspective: 800px; */
+    margin-top: 120px; 
+}
+.singleBox img {
+    height: 400px;
+    width: 400px;
+}
+.singleBox div {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+.frontSide{
+    transform: translateZ(200px);
+}
+.backSide {
+    transform: rotateY(180deg);
+    transform: translateZ(-200px);
+}
+.leftSide {
+    transform-origin: center;
+    transform: rotateY(-90deg);
+    transform: translateX(-200px);
+}
+.rightSide {
+    transform-origin: center;
+    transform: rotateY(90deg);
+    transform: translateX(200px);
+}
+/* .topSide {  
+    transform: rotateX(-90deg);
+    transform: translateZ(-200px);
+    transform-origin: top;
+}
+.bottomSide {
+    transform: rotateX(90deg);
+    transform: translateZ(200px);
+    transform-origin: bottom;
+} */
+@keyframes rotate{
+ 
+    0%{transform: rotateY(0);}
+   
+    100%{transform: rotateY(-360deg);}
+   
+}

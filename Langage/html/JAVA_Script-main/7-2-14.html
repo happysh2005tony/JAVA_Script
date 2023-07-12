@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.querySelector("textarea")
+            const h1 = document.querySelector("h1")
+            let timerId
+
+            //입력양식 활성화경우
+            textarea.addEventListener("focus", (event) => {
+                timerId = setInterval(() => {
+                    const length = textarea.value.length
+                    h1.textContent = `글자수: ${length}`
+                }, 50) //50밀리초마다 글자수 판별
+            })
+
+            //입력양식 활성화 안된 경우
+            textarea.addEventListener("blur", (event) => {
+                clearInterval(timerId)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input id="todo">
+    <button id="add-button">추가하기</button>
+    <div id="todo-list">
+
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        //문서객체 가져오기
+        const input = document.querySelector("#todo")
+        const todoList = document.querySelector("#todo-list")
+        const addButton = document.querySelector("#add-button")
+
+        //removeTodo()함수에서 문서 객체를 쉽게 제거하기위한 변수 선언
+        let keyCount = 0
+
+        //함수선언
+        const addTodo = () => {
+            //입력 안하면 빠꾸먹임
+            if (input.value.trim() === "") {
+                alert("할 일을 입력해주세요")
+                return
+            }
+
+            //createElement가 html에다가 div생성하고 스크립트에서는 item이라 부르게 하는거임
+            //문서 객체 설정
+            const item = document.createElement("div")
+            const checkbox = document.createElement("input")
+            const text = document.createElement("span")
+            const button = document.createElement("button")
+
+            //문서 객체 식별용 키
+            //해당 키에다가 현재 키카운트값 넣고 키카운트값 하나 올림
+            //이제 여기있는 모든 key는 고정됨
+            const key = keyCount
+            keyCount += 1
+
+            //위에 createElement로 생성한거 배치하는거
+            //item.appendChild(checkbox)는 item아래에 cheakbox배치해란뜻
+            item.setAttribute("data-key", key) //data-key속성을 추가하고 key값을 넣어라
+            item.appendChild(checkbox)
+            item.appendChild(text)
+            item.appendChild(button)
+            todoList.appendChild(item)
+            //<div data-key="숫자">
+            //  <input>
+            //  <span></span>
+            //  <button></button> 
+            //</div>
+            //이런모양 만드는거임
+
+            //위에 생성한 input태그의 타입을 체크박스로 설정
+            checkbox.type = "checkbox"
+            //체그되면 취소선 그어지게
+            checkbox.addEventListener("change", (event) => {
+                item.style.textDecoration = event.target.checked ? "line-through" : ""
+            })
+
+            //목록에 타이틀 넣기
+            text.textContent = input.value
+
+            //버튼 태그
+            button.textContent = "제거하기"
+            button.addEventListener('click', () => {
+                removeTodo(key)
+            })
+
+            //위 과정 끝나면 입력부분 비우기
+            input.value = ""
+        }
+
+        //지우는 함수
+        const removeTodo = (key) => {
+            const item = document.querySelector(`[data-key="${key}"]`) //데이타 키값이 해당버튼이 있는 키값을 찾아 받아서 item에다 집어넣음
+            todoList.removeChild(item)
+        }
+
+        addButton.addEventListener("click", addTodo)
+        input.addEventListener("keyup", (event) => {
+            //입력상에서 Enter키 누르면 위 addTodo함수 호출함
+            const ENTER = 13
+            if (event.keyCode === ENTER) {
+                addTodo()
+            }
+        })
+    })
+</script>
+</html>

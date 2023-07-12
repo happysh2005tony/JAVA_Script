@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 왭 api -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const p = document.querySelector("p")
+            const input = document.querySelector("input")
+            const button = document.querySelector("button")
+
+            const savedValue = localStorage.getItem("input") //getIem 값잃을때 쓰는 메소드
+            //localStorage.input 도 가능
+
+            if (savedValue) {
+                input.value = event.currentTarget.value
+                p.textContent = `이전 실행 때의 마지막 값: ${savedValue}`
+            }
+
+            input.addEventListener("keyup", (event) => {
+                const value = event.currentTarget.value
+                localStorage.setItem("input", value) //setItem 값 저장할때 쓰는 메소드
+                //localStorage.input = value 도 가능함
+            })
+
+            button.addEventListener("click", (event) => {
+                localStorage.clear() //clear 값 모두 제거하는 메소드
+                input.value = ""
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>새로고침해도 값이 남아있음</h1>
+    <p></p>
+    <button>지우기</button>
+    <input type="text">
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/*  */
+.Oswald {
+    font-family: 'Oswald', sans-serif;
+}
+/* 이거 뭐라하지? */
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration-line: none;
+}
+li {
+    list-style-type: none;
+}
+/* class */
+.nonDrag {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+.go {
+    cursor: pointer;
+}
+.background {
+    width: 100%;
+    background-image: url("./Poato/erik-mclean-QzpgqElvSiA-unsplash.jpg");
+    background-repeat: repeat;
+}
+.body {
+    width: 100vw;
+    padding: 0 50px;
+    top: 0;
+}
+.content {
+    min-width: 1000px;
+    max-width: 3000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgb(228, 219, 167);
+    box-shadow: -8px 8px 5px rgba(19, 16, 1, 0.9);
+}
+.header {
+    width: 100%;
+    height: 225px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 15px;
+}
+.logo {
+    display: inline-block;
+    height: 100%;
+    margin-right: 15px;
+    color: rgb(228, 219, 167);
+    background-image: linear-gradient(to right, rgb(228, 141, 141), rgb(209, 45, 45));
+    /* background-color: rgb(209, 45, 45); */
+}
+.logotitle {
+    width: 100%;
+    height: 225px;
+    padding: 20px;
+}
+.logoImg {
+    display: block;
+    margin: auto;
+    height: 100%;
+}
+.name {
+    display: inline-block;
+}
+.nameGrid {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+.nameTipo {
+    display: grid;
+    grid-template-columns: 5fr 150px 150px;
+    margin-bottom: 4px;
+    color: rgb(228, 219, 167);
+}
+.nameTipo2 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px;
+    background-color: rgb(48, 22, 3);
+}
+.title { /* 이거 왜이래 야매로 해야해? */
+    display: block;
+    height: 50px;
+    font-size: 50px;
+    /* line-height: 20px; */
+}
+.subTitle {
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+}
+.referenceLogo {
+    height: 146px;
+    margin-left: 4px;
+    padding: 20px;
+    background-color: rgb(48, 22, 3);
+}
+.headerExplanation {
+    padding: 20px;
+    color: rgb(234, 119, 42);
+    background-color: rgb(48, 22, 3);
+}
+.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 60px;
+}
+.navUl {
+    /* display: inline-block; */
+    height: 100%;
+    white-space:nowrap;
+    color: rgb(228, 219, 167);
+}
+.navMenu {
+    display: inline-block;
+    margin-right: 4px;
+    height: 100%;
+    padding: 15px;
+    background-color: rgb(4, 62, 4);
+}
+.navMenu:hover {
+    background-image: linear-gradient(to right, rgb(228, 141, 141), rgb(209, 45, 45));
+}
+.navMargin {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color: rgb(4, 62, 4);
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.mainPage {
+    display: block;
+    /* height: auto; */
+    height: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px;
+    padding: 10px;
+    /* color: darkgreen; */
+    /* background-color: rgb(212, 196, 104); */
+}
+.mainPage:hover {
+    min-height: 620px;
+    height: 100%;
+    /* background-color: rgb(186, 184, 173); */
+    background-image: linear-gradient(to right, rgb(186, 184, 173), rgb(212, 196, 104));
+}
+.ssak3 {
+    width: 700px;
+}
+.explanationImg {
+    /* display: inline-block; */
+    float: left;
+    margin-right: 20px;
+}
+.explanation {
+    /* display: inline-block; */
+    font-size: 20px;
+}
+.footerLine {
+    margin: 20px 0;
+    height: 5px;
+    border: 0;
+    /* background-color: rgb(4, 62, 4); */
+    border-top: 5px dashed rgb(4, 62, 4);
+}
+.footer {
+    text-align: center;
+}
+.underNav {
+    border: 0;
+    background-color: transparent;
+}

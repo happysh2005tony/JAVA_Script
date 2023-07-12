@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- *별표시 방향키로 움직이게 하는 코드 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const star = document.querySelector("h1")
+            star.style.position = "absolute" //상대위치 포지션 조정
+
+            //별의 이동을 출력하는 코드
+            let [x, y] = [0, 0]
+            const block = 20
+            const print = () => {
+                star.style.left = `${x*block}px`
+                star.style.top = `${y*block}px`
+            }
+            print()
+
+            //별을 이동하는 기능
+            const [left, up, right, down] = [37, 38, 39, 40] //참고로 저 숫자가 각각 키보드에서 방향키의 번호들임. 그걸 쉽게 하기위해 변수에 집어넣은거
+            document.body.addEventListener("keydown", (event) => { //키보드가 눌릴릴때 실행하라
+                switch (event.keyCode) {
+                    case left:
+                        x -= 1
+                        break
+                    case up:
+                        y -= 1
+                        break
+                    case right:
+                        x += 1
+                        break
+                    case down:
+                        y += 1
+                        break
+                }
+                print()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>*</h1>
+</body>
+</html>

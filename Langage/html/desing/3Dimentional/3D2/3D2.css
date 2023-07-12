@@ -1,0 +1,56 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+.fontPermanentMarker {
+    font-family: 'Permanent Marker', cursive;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Permanent+Marker&display=swap');
+.fontCherryBombOne {
+    font-family: 'Cherry Bomb One', cursive;
+    font-family: 'Permanent Marker', cursive;
+}
+/* set */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+/* class */
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    background-color: black;
+}
+.logo {
+    font-size: 40px;
+    text-align: center;
+}
+.logo a {
+    color: rgb(11, 206, 11);
+}
+.nav {
+    display: grid;
+    position: relative;
+    top: 50px;
+    width: 100vw;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    transform-style:preserve-3d;
+    /* perspective: 800px; */
+}
+.nav a {
+    display: block;
+    margin: auto 0;
+    color: black;
+}
+.navChoise {
+    background-color: rgb(11, 206, 11);
+    text-align: center;
+}
+.navChoise:hover {
+    transform: rotateY(180deg);
+}
